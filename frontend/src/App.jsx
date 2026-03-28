@@ -2,6 +2,7 @@ import { useRef } from "react";
 import CanvasBoard from "./components/CanvasBoard";
 import Toolbar from "./components/ToolBar";
 import { useDraw } from "./hooks/useDraw";
+import { Analytics } from '@vercel/analytics/next';
 
 export default function App() {
   const canvasRef = useRef(null);
@@ -9,6 +10,7 @@ export default function App() {
   const draw = useDraw(canvasRef);
 
   return (
+    <>
     <div className="h-screen bg-gradient-to-br from-gray-100 to-gray-200 p-4 flex flex-col overflow-hidden">
       <div className="max-w-6xl mx-auto w-full flex flex-col flex-1 min-h-0">
         {/* Header */}
@@ -36,5 +38,7 @@ export default function App() {
         </div>
       </div>
     </div>
+    <Analytics />
+    </>
   );
 }
