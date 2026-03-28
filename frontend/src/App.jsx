@@ -2,7 +2,7 @@ import { useRef } from "react";
 import CanvasBoard from "./components/CanvasBoard";
 import Toolbar from "./components/ToolBar";
 import { useDraw } from "./hooks/useDraw";
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   const canvasRef = useRef(null);
